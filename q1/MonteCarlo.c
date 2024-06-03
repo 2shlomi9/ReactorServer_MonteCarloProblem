@@ -52,8 +52,8 @@ int main(int argc, char* argv[]){
     double estimatedEllipseArea = (double)pointsInsideEllipse / totalPoints * canvasArea;
 
     double semi_major_axis = radius/2;
-    double focis_distance = (sqrt(pow(x1-x2,2) - pow(y1-y2,2)));
-    double semi_minor_axis =  (sqrt(pow(semi_major_axis,2) + pow(focis_distance,2)));
+    double focis_distance = (sqrt(pow(x1-x2,2) + pow(y1-y2,2)));
+    double semi_minor_axis =  (sqrt(pow(semi_major_axis,2) - pow(focis_distance,2)));
     double ellipseArea = semi_major_axis*semi_minor_axis* M_PI;
     double percentageCovered = (estimatedEllipseArea / canvasArea) * 100;
 
