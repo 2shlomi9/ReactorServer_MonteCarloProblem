@@ -10,7 +10,6 @@
 #include <dirent.h>
 
 #define BACKLOG 10
-#define PORT 9034
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
@@ -33,7 +32,7 @@ int main(int argc, char *argv[]) {
     }
 
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(PORT);
+    server_addr.sin_port = htons(server_port);
     inet_pton(AF_INET, server_address, &server_addr.sin_addr);
 
     // Connect to server
